@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import SkudEventDisplay from '../../model/SkudEventDisplay';
+import EventList from '../eventList/EventList';
 import './App.scss';
 
+const fetchSkudEvents = (callback: (events: SkudEventDisplay[]) => void): void => {
+    useEffect(() => {});
+};
+
 const App: React.FC = () => {
+    const [events, setEvents] = useState<SkudEventDisplay[]>([]);
+
+    fetchSkudEvents(events => {
+        setEvents(events);
+    });
+
     return (
         <div>
-            <h1>Hello</h1>
+            <EventList events={events} />
         </div>
     );
 };

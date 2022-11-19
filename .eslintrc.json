@@ -32,6 +32,7 @@
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/dot-notation": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/strict-boolean-expressions": "off",
         "no-var": "error",
         "indent": ["error", 4],
         "no-multi-spaces": "error",

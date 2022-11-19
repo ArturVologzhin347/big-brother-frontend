@@ -11,6 +11,7 @@
     "allowJs": true,
     "strict": false,
     "skipLibCheck": true,
+    "strictNullChecks": true
   },
   "include": [
     "src"
