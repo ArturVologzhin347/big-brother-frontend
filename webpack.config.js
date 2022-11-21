@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require('dotenv-webpack')
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -16,6 +17,7 @@ const config = {
     hot: true
   },
   plugins: [
+    new Dotenv(),
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
       template: "index.html",
