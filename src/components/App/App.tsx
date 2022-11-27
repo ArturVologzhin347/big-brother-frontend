@@ -5,7 +5,6 @@ import SkudEventDisplay from '../../model/SkudEventDisplay';
 import './App.scss';
 
 const App: React.FC = () => {
-
     const { loading, data, error } = useFetch<Page<SkudEventDisplay>>(
         'http://localhost:8080/api/admin/skud',
         {
