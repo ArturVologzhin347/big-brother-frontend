@@ -1,3 +1,9 @@
+export interface ServerErrorResponse {
+    readonly code: string;
+    readonly message: string;
+    readonly status: number;
+    readonly trace?: string;
+}
 export class ServerError extends Error {
     readonly code: string;
     readonly status: number;
@@ -8,11 +14,8 @@ export class ServerError extends Error {
         this.status = status;
         this.stack = trace;
     }
-}
 
-export interface ServerErrorResponse {
-    readonly code: string;
-    readonly message: string;
-    readonly status: number;
-    readonly trace?: string;
+    static fromServerResponse(response: ServerErrorResponse): ServerError {
+        return new ServerError(response.code, response.message, response.status, response.trace);
+    }
 }

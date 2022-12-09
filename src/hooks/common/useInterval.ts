@@ -12,9 +12,9 @@ export const useInterval: (callback: () => void, delay: number) => void = (callb
             savedCallback.current?.();
         }
 
-        const id = setInterval(tick, delay);
+        const timer = setInterval(tick, delay);
         return () => {
-            clearInterval(id);
+            clearInterval(timer);
         };
     }, [callback, delay]);
 };

@@ -1,11 +1,8 @@
 import SkudEvent from './SkudEvent';
+import Student from './Student';
 import StudentStatus from './StudentStatus';
 
-interface StudentDisplay {
-    readonly id: number;
-    readonly name: string;
-    readonly surname: string;
-    readonly patronymic: string;
+interface StudentDisplay extends Student {
     readonly lastEvent: SkudEvent;
     readonly status: StudentStatus;
 }
