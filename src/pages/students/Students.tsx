@@ -1,7 +1,15 @@
 import React from 'react';
+import StudentsList from '../../components/studentList/StudentsList';
+import useStudents from '../../hooks/useStudents';
 
 const Students: React.FC = () => {
-    return <div>Students</div>;
+    const students = useStudents();
+
+    return (
+        <>
+            <StudentsList students={students} />
+        </>
+    );
 };
 
 export default Students;

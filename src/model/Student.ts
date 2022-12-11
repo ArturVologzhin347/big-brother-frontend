@@ -1,8 +1,8 @@
 interface Student {
-    id: string;
-    name: string;
-    surname: string;
-    patronymic: string;
+    readonly id: string;
+    readonly name: string;
+    readonly surname: string;
+    readonly patronymic: string;
 }
 
 export default Student;
