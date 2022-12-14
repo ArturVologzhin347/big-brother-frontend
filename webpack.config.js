@@ -1,7 +1,6 @@
 const path = require("path");
-const Dotenv = require('dotenv-webpack')
-const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -10,21 +9,24 @@ const config = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
+  devtool: "inline-source-map",
   devServer: {
+    compress: true,
+    port: process.env.PORT || 3000,
+    historyApiFallback: true,
     open: true,
-    host: "localhost",
-    port: 3000,
-    hot: true
+    hot: true,
   },
   plugins: [
-    new Dotenv(),
-    new ESLintPlugin(),
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
+
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
+      
       {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
@@ -41,7 +43,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".scss", "..."],
   },
 };
 
