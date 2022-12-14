@@ -14,7 +14,8 @@
     "strictNullChecks": true
   },
   "include": [
-    "src"
+    "src",
+    "ext.d.ts"
   ],
   
   "files": ["src/index.tsx"]
